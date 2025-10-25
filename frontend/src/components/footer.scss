@@ -1,0 +1,99 @@
+.footer {
+  background: #241E4E;
+  padding: 50px 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  font-family:'Montserrat', sans-serif;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  .footer-logo {
+    width: 90px;
+    margin-bottom: 15px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .footer-desc {
+    max-width: 260px;
+    opacity: .7;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 6px 0;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        opacity: .8;
+        transition: .2s;
+
+        &:hover {
+          opacity: 1;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 15px;
+
+    a {
+      font-size: 1.4rem;
+      transition: .3s;
+
+      &:hover {
+        transform: scale(1.2);
+        color: #ff4b4b;
+      }
+    }
+  }
+
+  .footer-copy {
+    text-align: center;
+    margin-top: 40px;
+    opacity: .6;
+    font-size: .85rem;
+  }
+}
+
+// ➤ Animação suave do logo
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+// 🔹 Responsividade
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .footer-desc {
+      text-align: center;
+    }
+  }
+}
