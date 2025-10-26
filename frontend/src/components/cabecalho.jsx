@@ -11,7 +11,6 @@ const navLinks = [
   { to: '/QuemSomos', label: 'Quem Somos' },
   { to: '/reqdoar', label: 'Requisitos' },
   { to: '/ondedoar', label: 'Onde Doar' },
-  { to: '/contato', label: 'Contato' },
 ];
 
 export default function Cabecalho() {
