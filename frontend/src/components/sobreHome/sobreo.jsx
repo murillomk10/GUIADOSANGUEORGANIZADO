@@ -1,4 +1,5 @@
 import './sobreo.scss';
+import { Link} from 'react-router';
 
 export default function SobreHome() {
   return (
@@ -13,7 +14,9 @@ export default function SobreHome() {
         </p>
 
         <button className="botao-doar" data-aos="zoom-in" data-aos-delay="400">
+          <Link to='/pqdoar'>
           Por que doar?
+          </Link>
         </button>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import Cabecalho from '../components/cabecalho';
 import './Requisitos.scss';
 import cardao from '../assets/cardao.png'
+import Footer from '../components/footer';
 
 export default function RequesitosParaDoar() {
   return (
@@ -99,7 +100,7 @@ export default function RequesitosParaDoar() {
             <button className="btn">Agende sua doação aqui</button>
           </div>
 
-
+          <Footer/> 
    </div>
   )
 

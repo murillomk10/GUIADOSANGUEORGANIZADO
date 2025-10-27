@@ -1,8 +1,8 @@
-.container-requesitos {
+.container-cuidados {
   width: 100%;
   margin-top: 80px;
   background-color: #fff8f0;
-  padding: 0 px;
+  padding: 0px;
 
   .titulo-principal {
     font-size: 2.5rem;
@@ -37,7 +37,6 @@
     }
   }
 
-  /* ----------- CARD BASE ----------- */
   .card-requisitos,
   .card-impedimentos,
   .card,
@@ -45,14 +44,21 @@
   .card-info {
     display: flex;
     align-items: stretch;
+    justify-content: space-between;
     padding: 30px 40px;
     border-radius: 12px;
-    max-width: 800px;
+    width: 90%;
+    max-width: 900px;
     background: #fff8f0;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
     position: relative;
     gap: 25px;
     margin: 40px 0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
 
     .linha,
     .line {
@@ -81,15 +87,6 @@
         }
       }
 
-      .aviso,
-      .alerta {
-        font-family: "Arial", sans-serif;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #c30000;
-        margin-bottom: 15px;
-      }
-
       ul {
         list-style: disc;
         padding-left: 20px;
@@ -105,7 +102,25 @@
       }
     }
 
-    /* Responsivo: mobile */
+    img.img-card {
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+      align-self: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        width: 130px;
+        margin: 20px auto 0;
+      }
+    }
+
+ 
     @media (max-width: 768px) {
       flex-direction: column;
       padding: 25px 20px;
@@ -125,23 +140,14 @@
         justify-content: center;
       }
     }
-
-    @media (max-width: 480px) {
-      padding: 20px 15px;
-      .conteudo ul li,
-      .content ul li {
-        font-size: 0.9rem;
-      }
-    }
   }
 
-  /* ----------- POSIÇÃO DE CADA CARD ----------- */
 
-  /* Esquerda */
   .card-requisitos,
   .card,
   .card-info {
-    margin-left: 40px;
+    flex-direction: row; 
+    margin-left: 60px;
     margin-right: auto;
 
     @media (max-width: 768px) {
@@ -149,10 +155,10 @@
     }
   }
 
-  /* Direita */
   .card-impedimentos,
   .card-aqui {
-    margin-right: 40px;
+    flex-direction: row-reverse; 
+    margin-right: 60px;
     margin-left: auto;
 
     @media (max-width: 768px) {
@@ -160,7 +166,7 @@
     }
   }
 
-  /* ----------- CARD FINAL ----------- */
+
   .card-agendamento {
     display: flex;
     flex-direction: column;
@@ -210,4 +216,96 @@
       }
     }
   }
+
+  .section {
+  background-color: #fff8f0;
+  border: 1.5px solid #e3d5ca;
+  border-radius: 10px;
+  padding: 30px 40px;
+  width: 90%;
+  max-width: 900px;
+  margin: 60px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  .titulo-secundario {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #241e4e;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::after {
+      content: "";
+      flex-grow: 1;
+      height: 2px;
+      background-color: #ccc;
+      margin-left: 10px;
+      border-radius: 4px;
+    }
+  }
+
+  .tabela-de-tipos {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+  }
+
+  .lista-simples {
+    list-style: disc;
+    padding-left: 40px;
+
+    li {
+      font-size: 1.1rem;
+      color: #1c163a;
+      line-height: 1.6;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    padding: 25px 20px;
+    text-align: center;
+
+    .titulo-secundario {
+      font-size: 1.4rem;
+      justify-content: center;
+      &::after {
+        display: none;
+      }
+    }
+
+    .lista-simples {
+      padding-left: 20px;
+      text-align: left;
+
+      li {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+
+
 }

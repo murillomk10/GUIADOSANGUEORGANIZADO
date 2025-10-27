@@ -73,6 +73,11 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
 
+      a{
+        text-decoration: none;
+        color: #ffff;
+      }
+
       &:hover {
         transform: scale(1.07);
         box-shadow: 0 8px 25px rgba(183, 28, 28, 0.5);

@@ -10,6 +10,7 @@ const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/QuemSomos', label: 'Quem Somos' },
   { to: '/reqdoar', label: 'Requisitos' },
+  { to: '/reqdoar', label: 'Como Doar' },
   { to: '/ondedoar', label: 'Onde Doar' },
 ];
 
