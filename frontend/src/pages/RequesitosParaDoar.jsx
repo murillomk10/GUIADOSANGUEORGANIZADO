@@ -85,7 +85,7 @@ export default function RequesitosParaDoar() {
 
 <div className='card-info'>
    <div class='line'></div>
-   <div className='contant'>
+   <div className='content'>
     <h2>⚠️️️ Informações Importantes</h2>
       <ul>
         <li>Não é necessário jejum! Pelo contrário: alimente-se bem (evitando gordura) e hidrate-se antes.</li>
