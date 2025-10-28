@@ -1,0 +1,137 @@
+// Variáveis
+$cor-primaria: rgb(211, 5, 5);
+$cor-secundaria: rgb(226, 226, 226);
+$cor-texto: white;
+$cor-borda: black;
+$sombra: 0px 3px 3px gray;
+
+// Mixins
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin borda-arredondada($raio: 10px) {
+  border-radius: $raio;
+}
+
+.cadastro-page {
+  background-color: #FFF8F0;
+  min-height: 100vh;
+  padding: 50px 20px;
+
+  .cadastro-main {
+    @include flex-center(column);
+    
+    .cadastro-container {
+
+      .titulo {
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid $cor-primaria;
+        padding-bottom: 15px;
+
+        h1 {
+          color: $cor-primaria;
+          font-size: 24px;
+          margin: 0;
+          text-shadow: $sombra;
+        }
+      }
+
+      .form-cadastro {
+        .form-row {
+          display: flex;
+          gap: 40px;
+          margin-bottom: 30px;
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .form-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .campo {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+
+              label {
+                font-weight: bold;
+                color: #333;
+                font-size: 14px;
+              }
+
+              input, select, textarea {
+                padding: 12px;
+                border: 1px solid #ddd;
+                @include borda-arredondada(5px);
+                font-size: 14px;
+                transition: border-color 0.3s;
+
+                &:focus {
+                  outline: none;
+                  border-color: $cor-primaria;
+                }
+              }
+
+              textarea {
+                resize: vertical;
+                min-height: 80px;
+              }
+
+              .dica {
+                font-size: 12px;
+                color: #666;
+                font-style: italic;
+              }
+            }
+          }
+        }
+
+        .botoes {
+          @include flex-center(row);
+          gap: 20px;
+          margin-top: 30px;
+          padding-top: 20px;
+          border-top: 1px solid #eee;
+
+          .botao {
+            padding: 12px 30px;
+            @include borda-arredondada(25px);
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &.cancelar {
+              background-color: #6c757d;
+              color: white;
+
+              &:hover {
+                background-color: #5a6268;
+              }
+            }
+
+            &.cadastrar {
+              background-color: $cor-primaria;
+              color: $cor-texto;
+
+              &:hover {
+                background-color: darken($cor-primaria, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
