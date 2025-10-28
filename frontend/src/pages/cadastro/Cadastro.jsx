@@ -1,8 +1,11 @@
+import Cabecalho from "../../components/cabecalho";
 import "./Cadastro.scss";
 
 export default function Cadastro() {
   return (
     <div className="cadastro-page">
+      
+      <Cabecalho/>
       <main className="cadastro-main">
         <div className="cadastro-container">
           <div className="titulo">

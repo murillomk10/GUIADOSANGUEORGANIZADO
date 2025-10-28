@@ -1,9 +1,8 @@
 // Variáveis
-$cor-primaria: rgb(211, 5, 5);
-$cor-secundaria: rgb(226, 226, 226);
-$cor-texto: white;
-$cor-borda: black;
-$sombra: 0px 3px 3px gray;
+$cor-primaria: #C4001D;
+$cor-secundaria: #fff;
+$cor-texto: #fff;
+$sombra: 0px 3px 8px rgba(0,0,0,0.1);
 
 // Mixins
 @mixin flex-center($direction: row) {
@@ -20,77 +19,78 @@ $sombra: 0px 3px 3px gray;
 .cadastro-page {
   background-color: #FFF8F0;
   min-height: 100vh;
-  padding: 50px 20px;
+  padding: 100px 20px 50px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .cadastro-main {
-    @include flex-center(column);
-    
+    width: 100%;
+    max-width: 1000px;
+
     .cadastro-container {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: $sombra;
+
+      @media (max-width: 768px) {
+        padding: 25px;
+      }
 
       .titulo {
         text-align: center;
         margin-bottom: 30px;
-        border-bottom: 2px solid $cor-primaria;
-        padding-bottom: 15px;
 
         h1 {
           color: $cor-primaria;
-          font-size: 24px;
+          font-size: 26px;
           margin: 0;
-          text-shadow: $sombra;
+          font-weight: bold;
         }
       }
 
       .form-cadastro {
         .form-row {
           display: flex;
-          gap: 40px;
-          margin-bottom: 30px;
+          gap: 30px;
+          margin-bottom: 20px;
 
-          @media (max-width: 768px) {
+          @media (max-width: 840px) {
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
           }
+        }
 
-          .form-column {
-            flex: 1;
+        .form-column {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+
+          .campo {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 6px;
 
-            .campo {
-              display: flex;
-              flex-direction: column;
-              gap: 8px;
+            label {
+              font-size: 14px;
+              font-weight: 600;
+              color: #4A4A4A;
+            }
 
-              label {
-                font-weight: bold;
-                color: #333;
-                font-size: 14px;
-              }
+            input, select, textarea {
+              padding: 14px;
+              border: 1px solid #ccc;
+              @include borda-arredondada(8px);
+              font-size: 15px;
+              background: #fafafa;
+              transition: 0.3s ease-in-out;
 
-              input, select, textarea {
-                padding: 12px;
-                border: 1px solid #ddd;
-                @include borda-arredondada(5px);
-                font-size: 14px;
-                transition: border-color 0.3s;
-
-                &:focus {
-                  outline: none;
-                  border-color: $cor-primaria;
-                }
-              }
-
-              textarea {
-                resize: vertical;
-                min-height: 80px;
-              }
-
-              .dica {
-                font-size: 12px;
-                color: #666;
-                font-style: italic;
+              &:focus {
+                border-color: $cor-primaria;
+                box-shadow: 0px 0px 4px rgba(196, 0, 29, 0.4);
+                background: #fff;
               }
             }
           }
@@ -98,36 +98,33 @@ $sombra: 0px 3px 3px gray;
 
         .botoes {
           @include flex-center(row);
-          gap: 20px;
-          margin-top: 30px;
-          padding-top: 20px;
-          border-top: 1px solid #eee;
+          gap: 15px;
+          margin-top: 20px;
+          flex-wrap: wrap;
 
           .botao {
-            padding: 12px 30px;
-            @include borda-arredondada(25px);
+            padding: 12px 35px;
+            @include borda-arredondada(30px);
             border: none;
-            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: 0.3s ease;
+            font-size: 15px;
 
             &.cancelar {
-              background-color: #6c757d;
-              color: white;
+              background-color: #808080;
+              color: #fff;
 
-              &:hover {
-                background-color: #5a6268;
-              }
+              &:hover { background-color: #606060; }
             }
 
             &.cadastrar {
               background-color: $cor-primaria;
-              color: $cor-texto;
+              color: #fff;
 
-              &:hover {
-                background-color: darken($cor-primaria, 10%);
-              }
+              &:hover { background-color: darken($cor-primaria, 10%); }
             }
           }
         }

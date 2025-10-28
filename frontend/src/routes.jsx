@@ -4,8 +4,8 @@ import Sobre from "./pages/SobreNos";
 import RequisitosParaDoar from "./pages/RequesitosParaDoar";
 import CuidadosNaDoacao from "./pages/cuidadosdoacao";
 import PorQueDoar from "./pages/PorQueDoar";
-import Login from "./pages/login"
-import Cadastro from "./pages/cadastro";
+import Login from "./pages/login/Login";
+import Cadastro from "./pages/cadastro/Cadastro";
 
 export default function Navegacao(){
     return(
