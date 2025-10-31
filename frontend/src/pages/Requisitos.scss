@@ -3,25 +3,24 @@
   margin-top: 80px;
   background-color: #fff8f0;
   padding: 0 px;
- .banner-cuidados {
-  background-image: url('../assets/banner-requesitos.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 
-  width: 100%;
-  padding: 100px 0px;
-  position: relative;
-  color:  #000000;
+  .banner-cuidados {
+    background-image: url('../assets/banner-requisitos.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 100px 0px;
+    position: relative;
+    color: #000000;
 
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
   }
-}
 
   .texto-inicial {
     font-size: 28px;
@@ -34,7 +33,9 @@
       margin-left: 0;
       text-align: center;
     }
-  } .titulo-principal {
+  }
+
+  .titulo-principal {
     font-size: 2.7rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -50,13 +51,10 @@
       margin: 10px 100px 10px;
       height: 8px;
       background: #241e4e;
-
       border-radius: 10px;
     }
   }
 
-
-  /* ----------- CARD BASE ----------- */
   .card-requisitos,
   .card-impedimentos,
   .card,
@@ -124,11 +122,10 @@
       }
     }
 
-    /* Responsivo: mobile */
     @media (max-width: 768px) {
       flex-direction: column;
       padding: 25px 20px;
-      align-items: flex-start;
+      align-items: center;
       text-align: left;
       margin: 20px auto;
 
@@ -147,6 +144,7 @@
 
     @media (max-width: 480px) {
       padding: 20px 15px;
+
       .conteudo ul li,
       .content ul li {
         font-size: 0.9rem;
@@ -154,9 +152,7 @@
     }
   }
 
-  /* ----------- POSIÇÃO DE CADA CARD ----------- */
 
-  /* Esquerda */
   .card-requisitos,
   .card,
   .card-info {
@@ -168,7 +164,7 @@
     }
   }
 
-  /* Direita */
+  
   .card-impedimentos,
   .card-aqui {
     margin-right: 40px;
@@ -179,7 +175,6 @@
     }
   }
 
-  /* ----------- CARD FINAL ----------- */
   .card-agendamento {
     display: flex;
     flex-direction: column;
