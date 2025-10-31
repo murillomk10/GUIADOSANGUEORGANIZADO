@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin: 0px 0px 0px;
 
     .icon {
       width: 24px;
@@ -29,7 +29,6 @@
     margin-bottom: 2rem;
   }
 
-  /* 🔎 Campo de busca */
   .busca-form {
     display: flex;
     justify-content: center;

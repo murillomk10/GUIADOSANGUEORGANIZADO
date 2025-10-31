@@ -7,9 +7,17 @@ export default function RequesitosParaDoar() {
   return (
    <div className="container-requesitos">
      <Cabecalho />
-        <h1 className='titulo-principal'>Requistos para doar</h1>
-        <p className='texto-inicial'>A doação de sangue é bem complexa, pois é preciso seguir <br /> critérios especifícos, para garantir a segurança do doador e do <br /> receptor. <br /> Confira se você atende as especificações para poder doar e salvar vidas</p>
+       <div className="banner-cuidados">
+        <div className="conteudo-banner">
+          <h1 className="titulo-principal">Cuidados na Doação</h1>
+          <p className="texto-inicial">
+            Doe sangue, salve vidas! Uma única doação pode ajudar até quatro <br />
+            pessoas. Veja abaixo quais cuidados você deve ter:
+          </p>
+        </div>
+      </div>
 
+      
      <div className="card-requisitos">
   <div className="linha"></div>
 

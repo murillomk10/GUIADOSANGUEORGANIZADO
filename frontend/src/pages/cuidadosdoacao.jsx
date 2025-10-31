@@ -3,7 +3,7 @@ import cardao from "../assets/cardao.png";
 import bebida from "../assets/bebida.svg";
 import durante from "../assets/durante.svg";
 import leitura from "../assets/leitura.svg";
-import tiposangue from "../assets/tiposangue.svg"
+import tiposangue from "../assets/tiposangue.svg";
 import "../pages/cuidados.scss";
 import Footer from "../components/footer";
 
@@ -11,11 +11,17 @@ export default function CuidadosNaDoacao() {
   return (
     <div className="container-cuidados">
       <Cabecalho />
-      <h1 className="titulo-principal">Cuidados na doação</h1>
-      <p className="texto-inicial">
-        Doe sangue, salve vidas! Uma única doação pode ajudar até quatro <br /> pessoas.
-        Veja abaixo quais cuidados você deve ter:
-      </p>
+
+      <div className="banner-cuidados">
+        <div className="conteudo-banner">
+          <h1 className="titulo-principal">Cuidados na Doação</h1>
+          <p className="texto-inicial">
+            Doe sangue, salve vidas! Uma única doação pode ajudar até quatro <br />
+            pessoas. Veja abaixo quais cuidados você deve ter:
+          </p>
+        </div>
+      </div>
+
 
       <div className="card-requisitos">
         <div className="linha"></div>
@@ -69,19 +75,20 @@ export default function CuidadosNaDoacao() {
       </div>
 
       <div className="section">
-    <h2 className="titulo-secundario">🩺 Entenda a Compatibilidade Sanguínea:</h2>
-    <img className="tabela-de-tipos" src={tiposangue} alt="Tabela de compatibilidade sanguínea" />
-    <ul className="lista-simples">
-        <li>Doador Universal: O- é o tipo mais versátil e crucial em emergências.</li>
-        <li>Receptor Universal: AB+ pode receber sangue de qualquer tipo.</li>
-    </ul>
-    </div>
+        <h2 className="titulo-secundario">🩺 Entenda a Compatibilidade Sanguínea:</h2>
+        <img className="tabela-de-tipos" src={tiposangue} alt="Tabela de compatibilidade sanguínea" />
+        <ul className="lista-simples">
+          <li>Doador Universal: O- é o tipo mais versátil e crucial em emergências.</li>
+          <li>Receptor Universal: AB+ pode receber sangue de qualquer tipo.</li>
+        </ul>
+      </div>
 
       <div className="card-agendamento">
         <img className="cardao" src={cardao} alt="Agendamento" />
         <button className="btn">Agende sua doação aqui</button>
       </div>
-    <Footer/>
+
+      <Footer />
     </div>
   );
 }
