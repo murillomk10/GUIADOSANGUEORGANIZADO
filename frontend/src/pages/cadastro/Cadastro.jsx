@@ -20,23 +20,23 @@ export default function Cadastro() {
                   <input
                     type="text"
                     id="nome"
-                    placeholder="Que se a ser o amigo, um sabedade"
+                    placeholder="Nome Completo"
                   />
                 </div>
 
                 <div className="campo">
                   <label htmlFor="cpf">CPF</label>
-                  <input type="text" id="cpf" placeholder="Que eu o pôr" />
+                  <input type="text" id="cpf" placeholder="CPF + DIGITO" />
                 </div>
 
                 <div className="campo">
                   <label htmlFor="rg">RG</label>
-                  <input type="text" id="rg" placeholder="Que eu o foi" />
+                  <input type="text" id="rg" placeholder="..." />
                 </div>
 
                 <div className="campo">
                   <label htmlFor="telefone">NÚMERO DE TELEFONE</label>
-                  <input type="tel" id="telefone" placeholder="Ou propondo" />
+                  <input type="tel" id="telefone" placeholder="Digite aqui" />
                 </div>
 
                 <div className="campo">
@@ -49,7 +49,7 @@ export default function Cadastro() {
                   <input
                     type="text"
                     id="mae"
-                    placeholder="Que é o que significa"
+                    placeholder="Nome Completo"
                   />
                 </div>
 
@@ -57,7 +57,7 @@ export default function Cadastro() {
                   <label htmlFor="endereco">ENDEREÇO COMPLETO</label>
                   <textarea
                     id="endereco"
-                    placeholder="Conheço o documento completo. Seja que o contato não aparece."
+                  placeholder="Casa, Rua e Cep..."
                     rows="3"
                   ></textarea>
                 </div>
@@ -90,7 +90,7 @@ export default function Cadastro() {
 
                 <div className="campo">
                   <label htmlFor="email">E-MAIL</label>
-                  <input type="email" id="email" placeholder="Que eu o foi" />
+                  <input type="email" id="email" placeholder="" />
                 </div>
 
                 <div className="campo">
@@ -98,13 +98,13 @@ export default function Cadastro() {
                   <input
                     type="email"
                     id="confirmar-email"
-                    placeholder="Ou propondo"
+                    placeholder=""
                   />
                 </div>
 
                 <div className="campo">
                   <label htmlFor="senha">SENHA</label>
-                  <input type="password" id="senha" placeholder="Comerciado" />
+                  <input type="password" id="senha" placeholder="" />
                 </div>
 
                 <div className="campo">
@@ -112,7 +112,7 @@ export default function Cadastro() {
                   <input
                     type="password"
                     id="confirmar-senha"
-                    placeholder="Que é o que significa"
+                    placeholder=""
                   />
                 </div>
               </div>

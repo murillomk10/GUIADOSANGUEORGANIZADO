@@ -1,95 +1,105 @@
-import Cabecalho from "../components/cabecalho";
-import Footer from "../components/footer";
-import coracao from "../assets/coracao.svg";
-import gota from "../assets/gota.svg";
-import ajuda from "../assets/ajuda.svg";
-import "../pages/porque.scss";
+import Cabecalho from '../components/cabecalho';
+import './PorQue.scss';
+import cardao from '../assets/cardao.png'
+import Footer from '../components/footer';
+import Social from '../assets/socialComunity.svg'
+import hearton from '../assets/hearton.svg'
+import casal from '..//assets/casal.svg'
+import cearensi from '..//assets/mentaliti.svg'
+import muiecard from '..//assets/muie.svg'
 
-export default function PorQueDoar() {
+export default function RequesitosParaDoar() {
   return (
-    <div className="container-porque">
-      <Cabecalho />
-
-      <section className="conteudo-principal">
-        <h1 className="titulo">Por que doar sangue?</h1>
-        <p className="texto-intro">
-          Doar sangue é um ato simples, rápido e que pode salvar muitas vidas.  
-          Cada doação é uma oportunidade de oferecer esperança e cuidar do próximo.
-        </p>
-
-        <div className="cards-container">
-          <div className="card">
-            <img src={gota} alt="Salva vidas" className="icone" />
-            <div className="texto">
-              <h2>Salva vidas</h2>
-              <p>
-                Uma única doação pode ajudar até quatro pessoas. Seu gesto simples
-                tem o poder de mudar destinos.
-              </p>
-            </div>
-          </div>
-
-          <div className="card">
-            <img src={ajuda} alt="Ato solidário" className="icone" />
-            <div className="texto">
-              <h2>Ato de solidariedade</h2>
-              <p>
-                Doar é um ato de empatia. É compartilhar o que temos de mais valioso:
-                a vida.
-              </p>
-            </div>
-          </div>
-
-          <div className="card">
-            <img src={coracao} alt="Benefício mútuo" className="icone" />
-            <div className="texto">
-              <h2>Faz bem para você</h2>
-              <p>
-                Além de ajudar o próximo, a doação estimula a saúde, o autocuidado
-                e a consciência coletiva.
-              </p>
-            </div>
-          </div>
+   <div className="container-beneficios">
+     <Cabecalho />
+       <div className="banner-cuidados">
+        <div className="conteudo-banner">
+          <h1 className="titulo-principal">Benefícios de Doar</h1>
+          <p className="texto-inicial">A doação de sangue não só salva vidas, como também traz diversos benefícios para o próprio doador. Conheça alguns deles e veja por que esse gesto de solidariedade é tão importante.
+          </p>
         </div>
-      </section>
-
-      <section className="historias-inspiradoras">
-  <h2 className="titulo-secundario">💡 Histórias que Inspiram</h2>
-  <div className="cards-historias">
-    <div className="card-historia">
-      <img src={coracao} alt="Pessoa 1" className="foto" />
-      <div className="texto">
-        <p>
-          "Comecei a doar sangue aos 18 anos e desde então percebo o quanto é gratificante salvar vidas."
-        </p>
-        <span className="autor">— Maria, São Paulo</span>
       </div>
-    </div>
 
-    <div className="card-historia inverso">
-      <img src={gota} alt="Pessoa 2" className="foto" />
-      <div className="texto">
-        <p>
-          "Doar sangue é um gesto simples, mas que faz uma diferença enorme para quem precisa."
-        </p>
-        <span className="autor">— João, Rio de Janeiro</span>
-      </div>
+      
+      <div className="card-requisitos">        <div className="linha"></div>
+    <div className="conteudo">          <h2>
+        <span className="emoji">💝</span> Benefícios Sociais </h2>
+      <ul>
+        <li>1 dia de folga no trabalho por lei (com apresentação do comprovante).</li>
+        <li>Prioridade em atendimentos em hospitais públicos (em alguns estados).</li>
+        <li>Vantagem em concursos públicos conforme legislação local.</li>
+        <li>Reconhecimento social como doador frequente.</li>
+        <li>Comprovante válido como documento oficial.</li>
+      </ul>
     </div>
-
-    <div className="card-historia">
-      <img src={ajuda} alt="Pessoa 3" className="foto" />
-      <div className="texto">
-        <p>
-          "Saber que minha doação pode ajudar várias pessoas me motiva a continuar sempre."
-        </p>
-        <span className="autor">— Ana, Belo Horizonte</span>
-      </div>
-    </div>
+    <img src={ Social } alt=" Pessoas com predios no fundo" className="card-image" />
   </div>
-</section>
 
-
-      <Footer />
+  <div className="card-impedimentos">        <div className="linha"></div>
+    <div className="conteudo">          <h2>
+        <span className="emoji">💪</span>  Benefícios para sua Saúde
+      </h2>
+      <p className="aviso"></p>
+      <ul>
+        <li>Check-up gratuito com exames de sangue (hepatite, HIV, sífilis, etc.).</li>
+        <li>Controle de pressão arterial e sinais vitais.</li>
+        <li>Avaliação dos níveis de hemoglobina.</li>
+        <li>Renovação natural das células sanguíneas.</li>
+        <li>Equilíbrio dos níveis de ferro no organismo.</li>
+      </ul>
     </div>
-  );
+    <img src={ hearton } alt="Mulher Timer" className="card-image" />
+  </div>
+
+  <div className="card">        <div className="line"></div>
+    <div className="content">          <h2>👫 Impacto Coletivo</h2>
+      <p className="alerta">  </p>
+      <ul>
+        <li>Salva até 4 vidas com uma única doação.</li>
+        <li>Ajuda pacientes em tratamento de câncer e outras doenças.</li>
+        <li>Suporta emergências e cirurgias complexas.</li>
+        <li>Fortalece o sistema público de saúde.</li>
+        <li>Mantém estoques regulares nos bancos de sangue.</li>
+      </ul>
+    </div>
+    <img src={ casal } alt=" Casal de mãos dadas" className="card-image" />
+  </div>
+
+  <div className="card-aqui">        <div className="line"></div>
+    <div className="content">          <h2>😊 Benefícios Emocionais</h2>
+      <ul>
+        <li>
+          Sensação de bem-estar e realização pessoal.            </li>
+        <li>
+          Consciência tranquila por ajudar o próximo.            </li>
+          <li> Exemplo de solidariedade para a comunidade. </li>
+          <li>Satisfação de fazer a diferença real. </li>
+          <li>Fortalece o senso de cidadania. </li>
+      </ul>
+    </div>
+    <img src={ cearensi } alt="Homem em Viagem" className="card-image" />
+  </div>
+
+  <div className="card-info">        <div className="line"></div>
+    <div className="content">          <h2>📋 Vantagens Práticas</h2>
+      <ul>
+        <li>Processo 100% seguro com material descartável.</li>
+        <li>Atendimento humanizado por profissionais.</li>
+        <li>Lanche e hidratação oferecidos após doação.</li>
+        <li>Retorno rápido dos resultados dos exames.</li>
+        <li>Ambiente acolhedor e confortável.</li>
+      </ul>
+    </div>
+    <img src={ muiecard } alt="muie magica mediakkkj" className="card-image" />
+  </div>
+
+  <div className='card-agendamento'>
+    <img className='cardao' src={cardao} alt="cardenorme" />
+    <button className="btn">Agende sua doação aqui</button>
+  </div>
+
+  <Footer />
+</div>
+  )
+
 }

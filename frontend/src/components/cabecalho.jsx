@@ -1,34 +1,28 @@
-
 import { useState } from 'react';
-
 import { NavLink, Link } from 'react-router';
 import logo from '../assets/logo.png';
 import './cabecalho.scss';
 
-
-const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/QuemSomos', label: 'Quem Somos' },
-  { to: '/reqdoar', label: 'Requisitos' },
-  { to: '/reqdoar', label: 'Como Doar' },
-  { to: '/ondedoar', label: 'Onde Doar' },
-];
-
 export default function Cabecalho() {
-  // Estado para controlar a visibilidade do menu mobile
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsSubMenuOpen(false);
   };
 
-  // Função para fechar o menu ao clicar em um link (ótimo para mobile)
+  const toggleSubMenu = (e) => {
+    e.preventDefault();
+    setIsSubMenuOpen(!isSubMenuOpen);
+  };
+
   const handleLinkClick = () => {
     setIsMenuOpen(false);
+    setIsSubMenuOpen(false);
   };
 
   return (
-    // Adiciona a classe 'is-open' dinamicamente para o menu mobile
     <header className={`cabecalho ${isMenuOpen ? 'is-open' : ''}`}>
       <div className="cabecalho__logo">
         <Link to="/" onClick={handleLinkClick}>
@@ -38,31 +32,47 @@ export default function Cabecalho() {
 
       <nav className="cabecalho__nav">
         <ul className="cabecalho__menu">
-          {navLinks.map((link) => (
-            <li key={link.to}>
-              {/* NavLink adiciona uma classe 'active' automaticamente */}
-              <NavLink 
-                to={link.to} 
-                className={({ isActive }) => (isActive ? 'active' : '')}
-                onClick={handleLinkClick}
-              >
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
+          <li>
+            <NavLink to="/" onClick={handleLinkClick}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/" onClick={handleLinkClick}>Passos da doação</NavLink>
+          </li>
+          <li>
+            <NavLink to="/QuemSomos" onClick={handleLinkClick}>Quem Somos</NavLink>
+          </li>
+
+
+          <li className="submenu">
+            <button className="submenu__toggle" onClick={toggleSubMenu}>
+              Como Doar ▾
+            </button>
+            {isSubMenuOpen && (
+              <ul className="submenu__lista">
+                <li><NavLink to="/cuidados" onClick={handleLinkClick}>Cuidados na doação</NavLink></li>
+                <li><NavLink to="/menores" onClick={handleLinkClick}>Doação para menores</NavLink></li>
+                <li><NavLink to="/pqdoar" onClick={handleLinkClick}>Benefícios de doar</NavLink></li>
+                <li><NavLink to="/reqdoar" onClick={handleLinkClick}>Requisitos para doar</NavLink></li>
+              </ul>
+            )}
+          </li>
+
+          <li>
+            <NavLink to="/ondedoar" onClick={handleLinkClick}>Onde Doar</NavLink>
+          </li>
         </ul>
+
         <Link to="/login" className="cabecalho__btn" onClick={handleLinkClick}>
           Fazer Login
         </Link>
       </nav>
 
-      {/* Botão Hambúrguer para Mobile */}
+
       <button
         className="cabecalho__toggle"
         onClick={toggleMenu}
         aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         aria-expanded={isMenuOpen}
-        aria-controls="main-nav"
       >
         <span className="cabecalho__toggle-bar"></span>
         <span className="cabecalho__toggle-bar"></span>
