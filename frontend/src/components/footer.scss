@@ -97,9 +97,12 @@ html, body {
   .footer-social {
     display: flex;
     gap: 15px;
+    text-decoration: none;
+    color: $accent;
 
     a {
       font-size: 1.4rem;
+      color: #fff;
       transition: transform .3s, color .3s;
 
       &:hover {

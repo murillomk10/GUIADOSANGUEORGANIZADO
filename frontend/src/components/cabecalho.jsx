@@ -40,7 +40,7 @@ export default function Cabecalho() {
           </li>
           <li>
             <NavLink to="/QuemSomos" onClick={handleLinkClick}>Quem Somos</NavLink>
-          </li>
+    </li>
 
 
           <li className="submenu">

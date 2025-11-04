@@ -22,7 +22,6 @@ export default function CuidadosNaDoacao() {
         </div>
       </div>
 
-
       <div className="card-requisitos">
         <div className="linha"></div>
         <div className="conteudo">
