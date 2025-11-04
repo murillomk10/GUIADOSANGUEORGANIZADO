@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    marigin: 0;
+  }
+  
+  header {
+    padding-left: 10px;
+    background-color: #bb0a0c;
+    color: white;
+  
+    height: 100%;
+  
+    h1 {
+      padding: 10px;
+    }
+    p {
+      padding-left: 10px;
+    }
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  th {
+    background-color: #d9d9d9;
+    color: #333;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    border: 0.5px solid #333;
+  
+  }
+  
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    font-size: 14px;
+    border: 0.5px solid #333;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+    word-break: break-word;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  td:first-child {
+    font-weight: bold;
+  }
+  body {
+    background-color: #fffaf7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #f2b3a2;
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: 250px;
+    height: 32px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar .icon {
+    color: #e74c3c;
+    margin-right: 6px;
+    font-size: 14px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    color: #333;
+    background: transparent;
+  }
+  
+  .search-bar input::placeholder {
+    color: #aaa;
+  }
+  
+  .search-bar button {
+    background-color: #ff7043;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .search-bar button:hover {
+    background-color: #f4511e;
+  }
+  
