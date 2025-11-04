@@ -36,7 +36,7 @@ export default function Cabecalho() {
             <NavLink to="/" onClick={handleLinkClick}>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/" onClick={handleLinkClick}>Passos da doação</NavLink>
+            <NavLink to="/Passos" onClick={handleLinkClick}>Passos da doação</NavLink>
           </li>
           <li>
             <NavLink to="/QuemSomos" onClick={handleLinkClick}>Quem Somos</NavLink>
