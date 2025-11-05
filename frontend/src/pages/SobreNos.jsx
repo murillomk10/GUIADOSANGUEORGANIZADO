@@ -28,7 +28,7 @@ export default function Sobre() {
     <div className="layout">
     < Cabecalho />
       <main className="page-main">
-        <h1>Nossa Historia</h1>
+        <h1 className='titulo-principal'>Nossa Historia</h1>
         <section className="inicio">
           <div className="texto-principal">
             
