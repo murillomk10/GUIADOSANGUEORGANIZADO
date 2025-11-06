@@ -91,7 +91,7 @@
 
   button {
   width: 100%;
-  max-width: 250px; // ✅ impede o botão de ficar gigante
+  max-width: 250px; 
   height: 45px;
   background-color: #d30505;
   border: none;
@@ -101,7 +101,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: 0.25s;
-  align-self: center; // ✅ centraliza certinho
+  align-self: center; 
 
   &:hover {
     background-color: #a90303;
@@ -130,7 +130,7 @@
   }
 }
 
-// 📱 Responsivo
+
 @media (max-width: 480px) {
   .container-login {
     main {
@@ -144,18 +144,18 @@
     }
 
     button {
-      width: 200px !important; // ✅ tamanho fixo elegante
-      align-self: center; // ✅ centraliza corretamente
+      width: 200px !important; 
+      align-self: center; 
     }
 
     .botoes,
     .botao {
       width: 100%;
-      align-items: center; // ✅ impede desalinhamento
+      align-items: center; 
     }
 
     input {
-      width: 100% !important; // ✅ não deixa estourar o layout
+      width: 100% !important; 
       max-width: 260px;
     }
   }

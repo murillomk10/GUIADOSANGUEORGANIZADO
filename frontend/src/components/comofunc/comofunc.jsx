@@ -6,7 +6,7 @@ import hearticon from '../../assets/heart.svg'
 export default function ComoHome(){
     return(
         <div className="container-como">
-            <h1 className='titulo-principal'>Como Funciona</h1>
+            <h1 className='titulo-principalcomo'>Como Funciona</h1>
             <div className="Cartoes">
                 <div className="cartao">
                     <img src={localizaoicon} alt="iconedelocalizaçao" />
