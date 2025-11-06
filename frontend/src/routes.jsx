@@ -8,6 +8,7 @@ import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import DoacaoParaMenores from "./pages/DoacaoParaMenores";
 import OndeDoar from "./pages/ondedoar";
+import RegistrosPage from "./pages/RegistrosPage";
 
 export default function Navegacao(){
     return(
@@ -22,6 +23,7 @@ export default function Navegacao(){
                 <Route path='/cadastro' element={<Cadastro />} />
                 <Route path='/menores' element={<DoacaoParaMenores />} />
                 <Route path='/ondedoar' element={<OndeDoar />} />
+                <Route path='/registros' element={<RegistrosPage />} />
 
             </Routes>
         </BrowserRouter>
