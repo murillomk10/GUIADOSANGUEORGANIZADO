@@ -1,35 +1,55 @@
-import Cadastro from "../cadastro"
-import "./styles.scss"
-import { Link } from "react-router"
-import Cabecalho from "../../components/cabecalho"
+import { Link} from "react-router";
+import "./styles.scss";
+import Cabecalho from "../../components/cabecalho";
+
+import { useState} from "react";
 
 export default function Login() {
-    return(
-        <div className="body">
-          <Cabecalho/>
-        <main>
-      <div class="conteiner">
-        <div class="titulo">
-          <h1>Faça seu Login</h1>
-        </div>
-        <div class="botoes">
-          <div class="botao">
-            <label for="">E-mail</label>
-            <input type="text" />
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
+
+  return (
+    <div className="container-login">
+      <Cabecalho />
+
+      <main>
+        
+        <div className="card">
+          <div className="titulo">
+            <h1>Faça seu Login</h1>
           </div>
 
-          <div class="botao">
-            <label for="">Senha</label>
-            <input type="text" />
-            <Link to="/" className="recuperar-senha" >Esqueceu a senha?</Link>
+          <div className="botoes">
+            <div className="botao">
+              <label>E-mail</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+
+            <div className="botao">
+              <label>Senha</label>
+              <input
+                type="password"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+              <Link to="/" className="recuperar-senha">
+                Esqueceu a senha?
+              </Link>
+            </div>
           </div>
-        </div>
-        <div>
+
           <button>Entrar</button>
         </div>
-       </div> 
-       <Link to='/cadastro' className="link-cadastro">Sem cadastro ainda? cadastrar-se</Link>
-    </main>
-        </div>
-    )
+
+        <Link to="/cadastro" className="link-cadastro">
+          Sem cadastro ainda? Cadastre-se
+        </Link>
+      </main>
+    </div>
+  );
 }
