@@ -1,128 +1,185 @@
 import { useState } from "react";
 import "./AgendamentoPage.scss";
-import Cabecalho from "../components/Cabecalho";
-import Footer from "../components/Footer";
+import Cabecalho from "../components/cabecalho";
 
 export default function Agendamento() {
-  // estados para controlar quando mostrar os campos extras
-  const [resposta1, setResposta1] = useState("");
-  const [resposta2, setResposta2] = useState("");
-  const [resposta3, setResposta3] = useState("");
+  const [respostas, setRespostas] = useState({});
+
+  const handleChange = (pergunta, valor) => {
+    setRespostas((prev) => ({ ...prev, [pergunta]: valor }));
+  };
 
   return (
-    <div className="container-agendamento">
+    <div className="agendamento-container">
       <Cabecalho />
+      
 
-      <main className="conteudo-agendamento">
-        <h1>Agende sua Doação</h1>
-        <p>Responda as perguntas abaixo para continuar com seu agendamento:</p>
+      <h1>Formulário de Triagem para Doação de Sangue</h1>
+      <form className="formulario-agendamento">
 
-        {/* PERGUNTA 1 */}
+        {/* 1 */}
         <div className="pergunta">
-          <label>Você já doou sangue antes?</label>
-          <div className="opcoes">
-            <label>
-              <input
-                type="radio"
-                name="doouAntes"
-                value="sim"
-                onChange={() => setResposta1("sim")}
-                checked={resposta1 === "sim"}
-              />
-              Sim
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="doouAntes"
-                value="nao"
-                onChange={() => setResposta1("nao")}
-                checked={resposta1 === "nao"}
-              />
-              Não
-            </label>
-          </div>
-
-          {/* aparece apenas se o usuário marcar "Sim" */}
-          {resposta1 === "sim" && (
-            <input
-              type="date"
-              className="campo-extra"
-              placeholder="Quando foi sua última doação?"
-            />
-          )}
-        </div>
-
-        {/* PERGUNTA 2 */}
-        <div className="pergunta">
-          <label>Você está se sentindo bem hoje?</label>
-          <div className="opcoes">
-            <label>
-              <input
-                type="radio"
-                name="bemHoje"
-                value="sim"
-                onChange={() => setResposta2("sim")}
-                checked={resposta2 === "sim"}
-              />
-              Sim
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="bemHoje"
-                value="nao"
-                onChange={() => setResposta2("nao")}
-                checked={resposta2 === "nao"}
-              />
-              Não
-            </label>
-          </div>
-
-          {/* aparece apenas se marcar "Não" */}
-          {resposta2 === "nao" && (
-            <textarea
-              className="campo-extra"
-              placeholder="Conte-nos o motivo..."
-            ></textarea>
-          )}
-        </div>
-        <div className="pergunta">
-            <label>pergunta?</label>
-            <div className="opcoes">
-                <label> 
-                    <input type="radio"
-                    name="opcaonova"
-                    value="sim"
-                    onChange={() => setResposta3("sim")}
-                    checked={resposta3 === "sim"}
-                     />
-                </label>
-                Sim
-                <label>
-                    <input
-                    type="radio"
-                    name="opcaonova2"
-                    value="nao"
-                    onChange={() => setResposta3("nao")} 
-                    />
-                    Não
-                </label>
+          <p>Nos últimos 12 meses, você usou drogas ilícitas?</p>
+          <label><input type="radio" name="drogas" value="sim" onChange={() => handleChange("drogas", "sim")} /> Sim</label>
+          <label><input type="radio" name="drogas" value="nao" onChange={() => handleChange("drogas", "nao")} /> Não</label>
+          {respostas.drogas === "sim" && (
+            <div className="resposta-extra">
+              <label>Se sim, informe a data:</label>
+              <input type="date" />
             </div>
-
-        {resposta3 === "sim" && (
-            <input 
-            type="text"
-            className="campo-extra"
-            placeholder="QADADA?" />
-        )}
+          )}
         </div>
 
+        {/* 2 */}
+        <div className="pergunta">
+          <p>Você já recebeu transfusão de sangue ou derivados?</p>
+          <label><input type="radio" name="transfusao" value="sim" onChange={() => handleChange("transfusao", "sim")} /> Sim</label>
+          <label><input type="radio" name="transfusao" value="nao" onChange={() => handleChange("transfusao", "nao")} /> Não</label>
+          {respostas.transfusao === "sim" && (
+            <div className="resposta-extra">
+              <label>Se sim, informe a data:</label>
+              <input type="date" />
+            </div>
+          )}
+        </div>
 
-        <button className="btn-enviar">Enviar Agendamento</button>
-      </main>
+        {/* 3 */}
+        <div className="pergunta">
+          <p>É a sua primeira doação?</p>
+          <label><input type="radio" name="primeira" value="sim" onChange={() => handleChange("primeira", "sim")} /> Sim</label>
+          <label><input type="radio" name="primeira" value="nao" onChange={() => handleChange("primeira", "nao")} /> Não</label>
+          {respostas.primeira === "nao" && (
+            <div className="resposta-extra">
+              <label>Se não, quando foi sua última doação?</label>
+              <input type="date" />
+            </div>
+          )}
+        </div>
 
-      <Footer />
+        {/* 4 */}
+        <div className="pergunta">
+          <p>Você teve febre, gripe, resfriado ou diarreia nos últimos 7 dias?</p>
+          <label><input type="radio" name="febre" value="sim" onChange={() => handleChange("febre", "sim")} /> Sim</label>
+          <label><input type="radio" name="febre" value="nao" onChange={() => handleChange("febre", "nao")} /> Não</label>
+          {respostas.febre === "sim" && (
+            <div className="resposta-extra">
+              <label>Se sim, informe a data:</label>
+              <input type="date" />
+            </div>
+          )}
+        </div>
+
+        {/* 5 */}
+        <div className="pergunta">
+          <p>Você faz ou fez uso de algum medicamento?</p>
+          <label><input type="radio" name="medicamento" value="sim" onChange={() => handleChange("medicamento", "sim")} /> Sim</label>
+          <label><input type="radio" name="medicamento" value="nao" onChange={() => handleChange("medicamento", "nao")} /> Não</label>
+          {respostas.medicamento === "sim" && (
+            <div className="resposta-extra">
+              <label>Se sim, informe qual e para qual condição:</label>
+              <input type="text" placeholder="Ex: antibiótico para infecção..." />
+            </div>
+          )}
+        </div>
+
+        {/* 6 */}
+        <div className="pergunta">
+          <p>Você já foi diagnosticado com alguma doença crônica?</p>
+          <label><input type="radio" name="cronica" value="sim" onChange={() => handleChange("cronica", "sim")} /> Sim</label>
+          <label><input type="radio" name="cronica" value="nao" onChange={() => handleChange("cronica", "nao")} /> Não</label>
+          {respostas.cronica === "sim" && (
+            <div className="resposta-extra">
+              <label>Se sim, informe qual:</label>
+              <input type="text" />
+              <p>Está controlada?</p>
+              <label><input type="radio" name="controlada" /> Sim</label>
+              <label><input type="radio" name="controlada" /> Não</label>
+            </div>
+          )}
+        </div>
+
+        {/* 7 */}
+        <div className="pergunta">
+          <p>Você viajou para fora do país nos últimos 12 meses?</p>
+          <label><input type="radio" name="viagem" value="sim" onChange={() => handleChange("viagem", "sim")} /> Sim</label>
+          <label><input type="radio" name="viagem" value="nao" onChange={() => handleChange("viagem", "nao")} /> Não</label>
+          {respostas.viagem === "sim" && (
+            <div className="resposta-extra">
+              <label>Informe o país visitado:</label>
+              <input type="text" />
+              <label>Informe a data:</label>
+              <input type="date" />
+            </div>
+          )}
+        </div>
+
+        {/* 8 */}
+        <div className="pergunta">
+          <p>Você já teve alguma dessas doenças: Hepatite, Chagas, Câncer, HIV/AIDS, Epilepsia, Problemas cardíacos?</p>
+          <label><input type="radio" name="doencaGrave" value="sim" onChange={() => handleChange("doencaGrave", "sim")} /> Sim</label>
+          <label><input type="radio" name="doencaGrave" value="nao" onChange={() => handleChange("doencaGrave", "nao")} /> Não</label>
+        </div>
+
+        {/* 9 */}
+        <div className="pergunta">
+          <p>Nos últimos 12 meses, você teve relação sexual sem preservativo com uma nova pessoa?</p>
+          <label><input type="radio" name="relacao" value="sim" onChange={() => handleChange("relacao", "sim")} /> Sim</label>
+          <label><input type="radio" name="relacao" value="nao" onChange={() => handleChange("relacao", "nao")} /> Não</label>
+          {respostas.relacao === "sim" && (
+            <div className="resposta-extra">
+              <label>Informe a data:</label>
+              <input type="date" />
+            </div>
+          )}
+        </div>
+
+        {/* 10 - Mulheres */}
+        <div className="pergunta">
+          <p>Para mulheres: Você está grávida?</p>
+          <label><input type="radio" name="gravida" value="sim" onChange={() => handleChange("gravida", "sim")} /> Sim</label>
+          <label><input type="radio" name="gravida" value="nao" onChange={() => handleChange("gravida", "nao")} /> Não</label>
+          {respostas.gravida === "sim" && (
+            <div className="resposta-extra">
+              <label>Se sim, informe quantos meses:</label>
+              <input type="number" min="1" max="9" />
+            </div>
+          )}
+        </div>
+
+        <div className="pergunta">
+          <p>Para mulheres: Você está amamentando?</p>
+          <label><input type="radio" name="amamenta" value="sim" onChange={() => handleChange("amamenta", "sim")} /> Sim</label>
+          <label><input type="radio" name="amamenta" value="nao" onChange={() => handleChange("amamenta", "nao")} /> Não</label>
+          {respostas.amamenta === "sim" && (
+            <div className="resposta-extra">
+              <label>Se sim, o bebê tem menos de 12 meses?</label>
+              <label><input type="radio" name="bebe12" value="sim" /> Sim</label>
+              <label><input type="radio" name="bebe12" value="nao" /> Não</label>
+            </div>
+          )}
+        </div>
+
+        {/* 11 */}
+        <div className="pergunta">
+          <p>Aceita receber mensagens via WhatsApp?</p>
+          <label><input type="radio" name="whatsapp" value="sim" onChange={() => handleChange("whatsapp", "sim")} /> Sim</label>
+          <label><input type="radio" name="whatsapp" value="nao" onChange={() => handleChange("whatsapp", "nao")} /> Não</label>
+        </div>
+
+        {/* Termos */}
+        <div className="termos">
+          <label><input type="checkbox" /> Declaro que as informações fornecidas são verdadeiras.</label>
+          <label><input type="checkbox" /> Estou ciente de que posso ser considerado inapto após triagem.</label>
+          <label><input type="checkbox" /> Autorizo o uso dos meus dados de acordo com a LGPD.</label>
+        </div>
+
+        {/* Botões */}
+        <div className="botoes">
+          <button type="button" className="btn-cancelar">Cancelar</button>
+          <button type="submit" className="btn-enviar">Agendar</button>
+        </div>
+
+      </form>
     </div>
   );
 }

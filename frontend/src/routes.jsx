@@ -11,6 +11,7 @@ import OndeDoar from "./pages/ondedoar";
 import RegistrosPage from "./pages/RegistrosPage";
 import PasssosDaDoacao from "./pages/PassosDoacao";
 import Agendamento from "./pages/Agendamentopage";
+import PerfilUsuario from "./pages/perfilUsuario";
 
 export default function Navegacao(){
     return(
@@ -28,7 +29,7 @@ export default function Navegacao(){
                 <Route path='/registros' element={<RegistrosPage />} />
                 <Route path='/Passos' element={<PasssosDaDoacao />} />
                 <Route path='/agendamento' element={<Agendamento />} />
-
+                <Route path='/perfil' element={<PerfilUsuario />} />
             </Routes>
         </BrowserRouter>
     )
