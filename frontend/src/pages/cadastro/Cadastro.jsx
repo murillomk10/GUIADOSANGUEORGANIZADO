@@ -1,11 +1,11 @@
-import Cabecalho from "../../components/cabecalho";
+import Cabecalho2 from "../../components/cabecalho2";
 import "./Cadastro.scss";
 
 export default function Cadastro() {
   return (
     <div className="cadastro-page">
       
-      <Cabecalho/>
+      <Cabecalho2/>
       <main className="cadastro-main">
         <div className="cadastro-container">
           <div className="titulo">

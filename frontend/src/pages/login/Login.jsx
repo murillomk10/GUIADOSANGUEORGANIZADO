@@ -1,11 +1,11 @@
 import { Link } from "react-router";
 import "./login.scss";
-import Cabecalho from "../../components/cabecalho";
+import Cabecalho2 from "../../components/cabecalho2";
 
 export default function Login() {
   return (
     <div className="container-login">
-      <Cabecalho />
+      <Cabecalho2 />
       
       <main>
         <div className="card">
