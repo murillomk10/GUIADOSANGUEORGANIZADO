@@ -1,5 +1,4 @@
 import './homep.scss'
-import Cabecalho from '../components/cabecalho'
 import HeroSection from '../components/herosection/hero'
 import SobreHome from '../components/sobreHome/sobreo'
 import ComoHome from '../components/comofunc/comofunc'
@@ -8,7 +7,9 @@ import LocaisDoacao from '../components/locais/LocaisDoacao'
 import Depoimentos from '../components/depoimentos/Depoimentos'
 import Contato from '../components/contato/Contato'
 import Partners from '../components/Partners/Partners'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
+import Cabecalho from '../components/Cabecalho'
+
 
 export default function Home (){
     return(

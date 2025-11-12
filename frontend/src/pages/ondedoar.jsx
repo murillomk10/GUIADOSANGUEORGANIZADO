@@ -4,7 +4,6 @@ import Cabecalho from "../components/Cabecalho";
 import Footer from "../components/Footer";
 
 export default function OndeDoar() {
-  // Lista de locais (poderia vir de um JSON ou API)
   const locais = [
     {
       bairro: "Aclimação",

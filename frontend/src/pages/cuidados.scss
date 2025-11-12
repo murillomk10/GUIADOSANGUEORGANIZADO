@@ -5,24 +5,23 @@
   padding: 0px;
 
   .banner-cuidados {
-  background-image: url('../assets/banner-cuidados.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-image: url('../assets/banner-cuidados.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-  width: 100%;
-  padding: 100px 0px;
-  position: relative;
-  color:  #000000;
+    width: 100%;
+    padding: 100px 0px;
+    position: relative;
+    color: #000000;
 
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
   }
-}
 
   .texto-inicial {
     font-size: 28px;
@@ -35,11 +34,12 @@
       margin-left: 0;
       text-align: center;
     }
-  } .titulo-principal {
-    font-size: 2.7rem;
+  }
+
+  .titulo-principal {
+    font-size: 64px;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    font-size: 64px;
     color: #BF0603;
     top: 5px;
     position: relative;
@@ -51,13 +51,20 @@
       margin: 10px 100px 10px;
       height: 8px;
       background: #241e4e;
-
       border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      text-align: center;
+      &::after {
+        width: 200px;
+        margin: 10px auto;
+      }
     }
   }
 
-  
-
+  /* ====== CARDS ====== */
   .card-requisitos,
   .card-impedimentos,
   .card,
@@ -65,21 +72,14 @@
   .card-info {
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
     padding: 30px 40px;
     border-radius: 12px;
-    width: 90%;
     max-width: 900px;
     background: #FFFFFF;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
     position: relative;
     gap: 25px;
     margin: 40px 0;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.02);
-    }
 
     .linha,
     .line {
@@ -137,17 +137,17 @@
 
       @media (max-width: 768px) {
         width: 130px;
-        margin: 20px auto 0;
+        margin: 15px auto 0;
       }
     }
 
- 
     @media (max-width: 768px) {
       flex-direction: column;
-      padding: 25px 20px;
-      align-items: flex-start;
+      align-items: center;
       text-align: left;
+      padding: 25px 20px;
       margin: 20px auto;
+      width: 90%;
 
       .linha,
       .line {
@@ -161,13 +161,21 @@
         justify-content: center;
       }
     }
+
+    @media (max-width: 480px) {
+      padding: 20px 15px;
+
+      .conteudo ul li,
+      .content ul li {
+        font-size: 0.9rem;
+      }
+    }
   }
 
-
+  /* ====== POSICIONAMENTO ====== */
   .card-requisitos,
   .card,
   .card-info {
-    flex-direction: row; 
     margin-left: 60px;
     margin-right: auto;
 
@@ -178,7 +186,6 @@
 
   .card-impedimentos,
   .card-aqui {
-    flex-direction: row-reverse; 
     margin-right: 60px;
     margin-left: auto;
 
@@ -187,7 +194,7 @@
     }
   }
 
-
+  /* ====== CARD DE AGENDAMENTO ====== */
   .card-agendamento {
     display: flex;
     flex-direction: column;
@@ -224,109 +231,17 @@
       }
 
       @media (max-width: 768px) {
-        bottom: 70px;
-        padding: 10px 20px;
+        bottom: 50px;
+        left: 0;
+        margin: 0 auto;
         font-size: 15px;
       }
 
-      @media (max-width: 500px) {
-        bottom: 50px;
+      @media (max-width: 480px) {
+        bottom: 30px;
         font-size: 14px;
-        left: 70px;
-        padding: 8px 10px;
+        padding: 8px 16px;
       }
     }
   }
-
-  .section {
-  background-color: #FFFFFF;
-  border: 1.5px solid #e3d5ca;
-  border-radius: 10px;
-  padding: 30px 40px;
-  width: 90%;
-  max-width: 900px;
-  margin: 60px auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.01);
-  }
-
-  .titulo-secundario {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.7rem;
-    font-weight: 600;
-    color: #241e4e;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    &::after {
-      content: "";
-      flex-grow: 1;
-      height: 2px;
-      background-color: #ccc;
-      margin-left: 10px;
-      border-radius: 4px;
-    }
-  }
-
-  .tabela-de-tipos {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 25px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
-  }
-
-  .lista-simples {
-    list-style: disc;
-    padding-left: 40px;
-
-    li {
-      font-size: 1.1rem;
-      color: #1c163a;
-      line-height: 1.6;
-      margin-bottom: 10px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  /* Responsivo */
-  @media (max-width: 768px) {
-    padding: 25px 20px;
-    text-align: center;
-
-    .titulo-secundario {
-      font-size: 1.4rem;
-      justify-content: center;
-      &::after {
-        display: none;
-      }
-    }
-
-    .lista-simples {
-      padding-left: 20px;
-      text-align: left;
-
-      li {
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-
-
 }

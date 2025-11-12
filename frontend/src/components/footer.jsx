@@ -23,9 +23,9 @@ export default function Footer() {
           <h4>Links Rápidos</h4>
           <ul>
             <li><a href="/">Início</a></li>
-            <li><a href="/sobre">Sobre</a></li>
-            <li><a href="/locais">Locais de Doação</a></li>
-            <li><a href="/contato">Contato</a></li>
+            <li><a href="/QuemSomos">Sobre</a></li>
+            <li><a href="#locais">Locais de Doação</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
         </div>
 
